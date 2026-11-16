@@ -34,7 +34,7 @@ Commits made by Paperd carry a `Paperd-Revision:` trailer so every co-author's P
 ## Compile without Paperd
 
 ```bash
-cd paper && tectonic main.tex     # or: latexmk -xelatex main.tex
+cd paper && tectonic main.tex
 ```
 
 The numbers and two of the bibliography entries in the example are illustrative.
