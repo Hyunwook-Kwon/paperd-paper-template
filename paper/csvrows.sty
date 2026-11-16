@@ -1,0 +1,33 @@
+% csvrows: typesets the rows of a CSV file inside a tabular.
+%
+%   \begin{tabular}{lrrr}
+%   \hline
+%   \csvrows{../refs/data/results.csv}\\
+%   \hline
+%   \end{tabular}
+%
+% Commas separate columns, line ends separate rows, and the first line of the
+% file becomes the header row. The table follows the data file every time the
+% paper compiles.
+\ProvidesPackage{csvrows}
+
+\begingroup
+\catcode`\^^M=\active%
+\catcode`\,=\active%
+\global\let,&%
+\gdef\csvrows#1{%
+  \global\catcode`\,=\active%
+  \global\catcode`\^^M=\active%
+  \global\catcode`\%=12%
+  \global\let^^M\csvhead%
+  \global\everyeof{\csvend}%
+  \input{#1}}%
+\gdef\csvhead{\\\hline\noalign{\global\let^^M\csveol}}%
+\endgroup
+\def\csveol{\futurelet\csvnext\csvcheck}
+\def\csvcheck{\ifx\csvnext\csvend\else\expandafter\\\fi}
+\def\csvend{%
+  \global\catcode`\,=12
+  \global\catcode`\^^M=5
+  \global\catcode`\%=14
+  \global\everyeof{}}

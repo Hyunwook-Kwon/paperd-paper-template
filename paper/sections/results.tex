@@ -1,5 +1,21 @@
 \section{Results}
 \label{sec:results}
 
-We compared three settings on the same set of drafts.
-The numbers will be added here.
+We compared three settings on the same twelve drafts: manual editing, assistant suggestions applied automatically, and reviewed change sets.
+The numbers are illustrative; they live in \texttt{refs/data/results.csv}, and Table~\ref{tab:results} is generated from that file whenever the paper compiles.
+
+\begin{table}[t]
+\centering
+\caption{Accepted assistant edits, review time per draft and residual errors per page.}
+\label{tab:results}
+\begin{tabular}{lrrr}
+\hline
+\csvrows{../refs/data/results.csv}\\
+\hline
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:results} shows that reviewed change sets double the quality of the final draft~\cite{kim2021ledger}.
+Reviewers were faster, and errors went down.
+
+The remaining errors were mostly in patch sets that touched several sections at once.
