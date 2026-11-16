@@ -1,6 +1,12 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Assistants for scientific writing are now common.
-They can rewrite a paragraph in seconds.
-This paper looks at how the author stays in control.
+Writing assistants rewrite a paragraph in seconds, and many authors now use one for at least part of a paper~\cite{park2022review}.
+Speed is not the problem; accountability is.
+When an edit lands directly in the source, nobody decides whether it should, and a changed claim can survive until peer review~\cite{lee2024tracking}.
+
+Version control solves a similar problem for code: every change is recorded and can be compared, restored or merged~\cite{myers1986diff}.
+We apply the same idea to papers written in \LaTeX{}~\cite{lamport1994latex}.
+
+Our contribution is a workflow in which assistant output is always a proposal and only the author's decision changes the paper.
+Section~\ref{sec:method} describes the workflow and Section~\ref{sec:results} reports a small illustrative comparison.
